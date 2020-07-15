@@ -1,0 +1,25 @@
+.home_product{
+    width: 100%;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #cccccc;
+    padding-top: 20px;
+    height: 210px;
+    display: flex;
+    padding-right: 35px;
+}
+.home_product:last-child{
+    border-bottom: none;
+}
+.cartOption{
+    float: left;
+    width: 16%;
+    margin-left: 10px;
+    height: 100%;
+    padding-top: 40px;
+}
+.cartOption h2{
+    text-align: center;
+}
+.cartOption p{
+    text-align: center;
+}
