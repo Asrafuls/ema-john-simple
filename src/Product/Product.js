@@ -1,5 +1,6 @@
 import React from 'react';
 import './Product.css'
+import starIconLast from './../images/icons8-star-filled-16.png'
 
 const Product = (props) => {
     const floatLeft = {
@@ -40,7 +41,7 @@ const Product = (props) => {
                         <img src="https://img.icons8.com/office/16/000000/filled-star.png" />
                         <img src="https://img.icons8.com/office/16/000000/filled-star.png" />
                         <img src="https://img.icons8.com/office/16/000000/filled-star.png" />
-                        <img src="https://img.icons8.com/office/16/000000/star-half-empty.png" />
+                        <img src={starIconLast} alt=""/>
                     </div>
                     <div className="features">
                         <h4>Features</h4>
