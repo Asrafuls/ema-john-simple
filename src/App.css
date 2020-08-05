@@ -64,3 +64,115 @@ nav ul li a:hover{
     padding-right: 35px;
     padding-top: 35px;
 }
+.productFullDetails{
+    width: 70% !important;
+    margin: 0 auto;
+    padding: 0 10px;
+    border-right: 1px solid #cccccc;
+    border-left: 1px solid #cccccc;
+}
+.sakak{
+    font-family: 'Lato', sans-serif; 
+    text-align: center;  
+    width: 300px; 
+    margin: 10% auto;
+}
+.weewwewe{
+    margin-bottom: 0 !important; 
+    font-weight: bold; 
+     display: inline-block; 
+     padding: 5px 10px 8px 0; 
+     border-right: 2px solid #aaa; 
+     color: #868686 ;
+}
+.dflkdkldf{
+    margin-bottom: 60px; 
+    display: inline-block; 
+    margin-left: 10px; 
+    color: #868686 
+}
+/* Review */
+.review{
+    width: 85%;
+    margin: 0 auto;
+    border-right: 1px solid #aaa;
+    border-left: 1px solid #aaa;
+}
+.reviewCartItems{
+    padding: 30px 0;
+    width: 78%;
+    border-right: 1px solid #aaa;
+    display: inline-block;
+}
+.allCartItem{
+    padding: 20px 15px;
+    border-bottom: 1px solid #aaa;
+    height: 200px;
+}
+.allCartItem:last-child{
+    border-bottom: none;
+}
+.allCartItemsLeft{
+    float: left;
+    padding-right: 10px;
+}
+.allCartItem h2{
+    font-size: 17px;
+    font-size: medium;
+    margin-top: -10px;
+    color: #008bff;
+}
+.allCartItem h2:active{
+    color: #006fca;
+}
+.form_control_in_review{
+    width: 20px;
+    text-align: center;
+    border: 1px solid #3ca4ff;
+    border-radius: 3px;
+    padding: 3px;
+    transition: all .5s;
+    color: #006fcf;
+}
+.form_control_in_review:focus{
+    box-shadow: 0px 0px 0px 2px #a8d7ff;
+}
+.allCartItemsRightPrice{
+    margin: 15px 0 0 0;
+    font-size: 18px;
+    color: #ff5000;
+    padding-bottom: 5px;
+}
+.allCartItemsRightTotalPrice{
+    margin-top: 10px;
+}
+.allCartItemsRightTotalPrice strong{
+    color: #ff5000;
+}
+.allCartItemsRightFeatures{
+    float: right;
+    margin-top: -100px !important;
+    width: 320px;
+}
+.reviewCartChackOut{
+    width: 21%;
+    float: right;
+    margin-right: 4px;
+}
+.reviewCartChackOut h3{
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+.reviewCartChackOut li{
+    list-style: none;
+    padding-bottom: 8px;
+}
+.reviewCartChackOut strong{
+    float: right;
+    padding-right: 5px;
+}
+.cartTotalPrice{
+    font-size: 19px;
+    font-weight: bold;
+    color: rgb(255, 80, 0);
+}

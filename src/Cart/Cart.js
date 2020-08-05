@@ -9,9 +9,9 @@ const Cart = (props) => {
 
     const cart = props.orderdItems;
     // let orderTotal = 0;
-    console.log(props.orderdItems);
+    // console.log(props.orderdItems);
 
-    const orderTotal = cart.reduce ( (orderTotal, product) => orderTotal + product.price , 0)
+    const orderTotal = cart.reduce ( (orderTotal, product) => orderTotal + product.price * product.quantaty , 0)
     let shipping = 0;
     if(orderTotal < 15){
         shipping = 0;
@@ -21,7 +21,7 @@ const Cart = (props) => {
         shipping = 9.99;
     }
 
-    const estimateTax = orderTotal / 6;
+    const estimateTax = orderTotal / 10;
     
     let TotalTaxBeforeShippingAndTax = orderTotal;
     // for (let i = 0; i < cart.length; i++) {
@@ -37,8 +37,10 @@ const Cart = (props) => {
             <span id="shipping">Shipping: <b>$ {shipping}</b></span><br />
             <span id="Total_tax_before_shipping_and_tax"><small>Before shipping and tax:</small><b>$ {round(TotalTaxBeforeShippingAndTax)}</b></span><br />
             <span>Estimate Tax: <b>$ {round(estimateTax)}</b></span><br />
-            <h3>Order Total: <b>$ {fullPrice}</b></h3><br />
-            <button id="add_to_cart"> Review Your Order</button> 
+            <h3 className="cartTotalPrice">Order Total: <b>$ {fullPrice}</b></h3><br />
+            {
+                props.children
+            }
         </div>
     );
 };
