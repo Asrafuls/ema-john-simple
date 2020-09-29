@@ -1,28 +1,36 @@
 import React from 'react';
+import { useContext } from 'react';
+import { Redirect, Route } from 'react-router-dom';
+import { UserContext } from '../../App';
+import { useAuth } from '../Login/useAuth';
 import './cart.css';
 
 const Cart = (props) => {
-    function round(property){
+    function round(property) {
         const rounding = property.toFixed(2);
-        return(rounding)
+        return (rounding)
     }
+
+    const user = useContext(UserContext)
 
     const cart = props.orderdItems;
     // let orderTotal = 0;
-    // console.log(props.orderdItems);
+    // console.log(user);
 
-    const orderTotal = cart.reduce ( (orderTotal, product) => orderTotal + product.price * product.quantaty , 0)
+    const orderTotal = cart.reduce((orderTotal, product) => orderTotal + product.price * product.quantaty, 0)
     let shipping = 0;
-    if(orderTotal < 15){
+    if (orderTotal < 15) {
         shipping = 0;
-    }else if(orderTotal > 0){
+    } else if (orderTotal > 0) {
         shipping = 12.99;
-    }else if(orderTotal > 15){
+    } else if (orderTotal > 15) {
         shipping = 9.99;
     }
 
+
+
     const estimateTax = orderTotal / 10;
-    
+
     let TotalTaxBeforeShippingAndTax = orderTotal;
     // for (let i = 0; i < cart.length; i++) {
     //     const total = cart[i];

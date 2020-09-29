@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
-import { getDatabaseCart, removeFromDatabaseCart, processOrder } from '../utilities/databaseManager';
+import { getDatabaseCart, removeFromDatabaseCart, processOrder } from './../../utilities/databaseManager';
 import { useEffect } from 'react';
-import fakeData from '../fakeData';
 import AllCartItems from '../AllCartItems/AllCartItems';
 import Cart from '../Cart/Cart';
 import "./Review.css";
 import happyImages from "../images/giphy.gif"
+import fakeData from '../../fakeData';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../Login/useAuth';
 
 const Review = () => {
+
+    const auth = useAuth()
     const [cart, setCart] = useState([]);
     const [happyImg, setHappyImg] = useState(false);
-    const handalePlaceOrder = () => {
+    const handlePlaceOrder = () => {
         setCart([])
         setHappyImg(true)
         processOrder()
@@ -50,12 +54,32 @@ const Review = () => {
                     ></AllCartItems>)
                 }
                 {happyImgUrl}
+                {
+                    !cart.length && <div style={{ width: '400px', margin: '0 auto', textAlign: 'center' }} className="noProductInCart">
+                        <br />
+                        <h2>Not have any product in your cart</h2>
+                        <br /><br />
+                        <a style={{ padding: '5px 15px 10px 15px', background: '#F0C14B', color: '#fff', borderRadius: '3px', fontSize: '18px', border: '1px solid #797979' }} href="/">continue shopping</a>
+                    </div>
+                }
             </div>
-            <div className="reviewCartChackOut">
-                <Cart orderdItems={cart}>
-                    <button onClick={handalePlaceOrder} id="add_to_cart" style={{ marginLeft: "40px" }}> Place Order</button>
-                </Cart>
+
+            {
+                    cart.length && 
+            <div style={{ marginBottom: '20px' }} className="reviewCartChackOut">
+                    <Cart orderdItems={cart}>
+                        <Link to='checkout'>
+                            {
+                                auth.user ?
+                                    <button id="add_to_cart" style={{ marginLeft: "23px" }}>Proceed to checkout</button>
+                                    :
+                                    <button id="add_to_cart" style={{ marginLeft: "23px" }}>Login to checkout</button>
+                            }
+                        </Link>
+                    </Cart>
             </div>
+                }
+
         </div>
     );
 };
